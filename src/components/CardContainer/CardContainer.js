@@ -17,6 +17,7 @@ const CardContainer = ({ title, description, imgUrl }) => {
       }}
     >
       <CardInformation
+        sx={{}}
         title={title}
         description={description}
         imgUrl={imgUrl}
