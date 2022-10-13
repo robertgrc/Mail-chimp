@@ -3,6 +3,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import CardInformation from "../CardInformation/CardInformation";
 import SelectDropdown from "../SelectDropdown/SelectDropdown";
+import DropDownPrueba from "../DropDownPrueba/DropDownPrueba";
 
 const CardContainer = ({ title, description, imgUrl }) => {
   return (
@@ -21,6 +22,8 @@ const CardContainer = ({ title, description, imgUrl }) => {
         imgUrl={imgUrl}
       />
       <SelectDropdown />
+      <br />
+      <DropDownPrueba />
     </Box>
   );
 };
