@@ -5,7 +5,7 @@ import Iconchimp from "../../assets/gmail/Iconchimp.jpg";
 const MailChimpCard = () => {
   return (
     <CardContainer
-      title="Gmail"
+      title="Mailchimp"
       description="These Mailchimp contacts will
       sync to Gmail"
       imgUrl={Iconchimp}

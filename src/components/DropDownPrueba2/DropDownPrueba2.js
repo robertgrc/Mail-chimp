@@ -19,12 +19,30 @@ const DropDownPrueba = () => {
   const [openCollapse, setOpenCollapse] = useState(false);
 
   return (
-    <Box>
+    <Box
+      sx={{
+        width: "216.72px",
+        height: "44.46px",
+        marginTop: "24px",
+        marginLeft: "33px",
+        background: "#F5F8FA",
+        border: "1px solid #CBD6E2",
+        borderRadius: "2px",
+      }}
+    >
       <List>
-        <ListItem divider>
-          <ListItemButton onClick={() => setOpenCollapse(true)}>
-            <ListItemText primary={"All contacts"} />
-            <ListItemIcon>{">"}</ListItemIcon>
+        <ListItem>
+          <ListItemButton>
+            <Box>
+              <ListItemIcon>{"<"}</ListItemIcon>
+            </Box>
+            <Box>
+              <ListItemText primary={"All contacts"} />
+            </Box>
+
+            <ListItemIcon onClick={() => setOpenCollapse(!openCollapse)}>
+              {">"}
+            </ListItemIcon>
           </ListItemButton>
         </ListItem>
       </List>
@@ -40,7 +58,7 @@ const DropDownPrueba = () => {
         >
           {array.map((listElem) => (
             <ListItem divider>
-              <ListItemButton onClick={() => setOpenCollapse(false)}>
+              <ListItemButton>
                 <ListItemText primary={listElem} />
               </ListItemButton>
             </ListItem>

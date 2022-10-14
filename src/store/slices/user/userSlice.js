@@ -1,22 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  collapse: "",
-  name: "",
-  email: "",
+  collapse: false,
+  closeCollapse: false,
+  openCollapse: false,
 };
 
 export const userSlice = createSlice({
   name: "user",
   initialState: initialState,
   reducers: {
-    setUser: (state, action) => {
-      state.collapse = action.payload.email;
-      state.name = action.payload.name;
+    closeCollapse: (state) => {
+      state.collapse = false;
+    },
+    openCollapse: (state) => {
+      state.collapse = true;
     },
   },
 });
 //Actions creators are generated foreach case reducer function
-export const { setUser } = userSlice.actions;
+export const { setUser, closeCollapse, openCollapse } = userSlice.actions;
 
 export default userSlice.reducer;

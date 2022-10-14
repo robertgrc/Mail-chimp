@@ -1,6 +1,6 @@
-import { Avatar, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
-import Blob from "../assets/Blob.jpg";
+//import Blob from "../assets/Blob.jpg";
 import GmailCard from "../components/GmailCard/GmailCard";
 import MailChimpCard from "../components/MailChimpCard/MailChimpCard";
 
