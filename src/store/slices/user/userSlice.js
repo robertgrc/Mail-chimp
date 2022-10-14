@@ -4,6 +4,7 @@ const initialState = {
   collapse: false,
   closeCollapse: false,
   openCollapse: false,
+  checkBox: false,
 };
 
 export const userSlice = createSlice({
@@ -11,14 +12,17 @@ export const userSlice = createSlice({
   initialState: initialState,
   reducers: {
     closeCollapse: (state) => {
-      state.collapse = false;
+      state.collapse = !state;
     },
     openCollapse: (state) => {
-      state.collapse = true;
+      state.collapse = !state;
+    },
+    setCheckBox: (state) => {
+      state.checkBox = !state;
     },
   },
 });
 //Actions creators are generated foreach case reducer function
-export const { setUser, closeCollapse, openCollapse } = userSlice.actions;
+export const { closeCollapse, openCollapse, setCheckBox } = userSlice.actions;
 
 export default userSlice.reducer;

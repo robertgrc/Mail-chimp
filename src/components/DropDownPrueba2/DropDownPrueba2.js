@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import {
   //Avatar,
-  //Avatar,
   Box,
+  Checkbox,
   Collapse,
+  FormControl,
+  FormControlLabel,
+  FormGroup,
+  FormLabel,
   List,
   ListItem,
   ListItemButton,
@@ -11,12 +15,17 @@ import {
   //ListItemIcon,
   ListItemText,
 } from "@mui/material";
+//import { useDispatch } from "react-redux";
 //import Icono1 from "../../assets/Dropdown/Icono1.jpg";
 //import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+//import { ok } from "../../assets/Dropdown/ok.jpg";
+
 const array = ["Family", "Work Friends", "Another Label"];
 
 const DropDownPrueba = () => {
   const [openCollapse, setOpenCollapse] = useState(false);
+
+  //const dispatch = useDispatch();
 
   return (
     <Box
@@ -33,9 +42,7 @@ const DropDownPrueba = () => {
       <List>
         <ListItem>
           <ListItemButton>
-            <Box>
-              <ListItemIcon>{"<"}</ListItemIcon>
-            </Box>
+            <Box>{"<"}</Box>
             <Box>
               <ListItemText primary={"All contacts"} />
             </Box>
@@ -57,7 +64,19 @@ const DropDownPrueba = () => {
           }}
         >
           {array.map((listElem) => (
-            <ListItem divider>
+            <ListItem>
+              <Box>
+                <FormControl component="fieldset">
+                  <FormGroup aria-label="position" row>
+                    <FormControlLabel
+                      value="start"
+                      control={<Checkbox color="primary" />}
+                    />
+                  </FormGroup>
+                </FormControl>
+                {/* <ListItemIcon>{}</ListItemIcon> */}
+              </Box>
+
               <ListItemButton>
                 <ListItemText primary={listElem} />
               </ListItemButton>
