@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
+import Blob from "../components/Blob/Blob";
 //import Blob from "../assets/Blob.jpg";
 import GmailCard from "../components/GmailCard/GmailCard";
 import MailChimpCard from "../components/MailChimpCard/MailChimpCard";
@@ -15,26 +16,32 @@ const MainPage = () => {
       sx={{
         width: "1440px",
         height: "1024px",
-        backgroundColor: "tomato",
+        // backgroundColor: "green",
         display: "flex",
-        alignItems: "center",
-        justifyContent: "space-around",
+        alignItems: "flex-start",
       }}
     >
-      <Box sx={{}}>
+      <Box sx={{ marginTop: "164px", marginLeft: "342px", zIndex: "2" }}>
         <GmailCard />
       </Box>
 
-      <SyncContacts />
+      <Box
+        sx={{
+          marginTop: "276px",
+          marginLeft: "28.23px",
+          marginRight: "28.71px",
+          zIndex: "2",
+        }}
+      >
+        <SyncContacts />
+      </Box>
 
-      <Box sx={{}}>
+      <Box sx={{ marginTop: "164px", zIndex: "2" }}>
         <MailChimpCard handleSyncContacts={handleSyncContacts} />
       </Box>
-      {/* <Avatar
-        src={Blob}
-        alt="imgBlob"
-        sx={{ width: "522px", height: "539px" }}
-      /> */}
+      <Box sx={{ zIndex: "1" }}>
+        <Blob />
+      </Box>
     </Box>
   );
 };

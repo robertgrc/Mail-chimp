@@ -15,6 +15,7 @@ const CardContainer = ({ title, description, imgUrl }) => {
         background: "#FFFFFF",
         border: "2px solid #DFE3EB",
         borderRadius: "2px",
+        boxSizing: "border-box",
       }}
     >
       <CardInformation
@@ -26,7 +27,13 @@ const CardContainer = ({ title, description, imgUrl }) => {
       {/* <SelectDropdown />
       <br /> */}
       {/* <DropDownPrueba /> */}
-      <DropDownPrueba2 />
+      <Box
+        sx={{
+          marginTop: "35px",
+        }}
+      >
+        <DropDownPrueba2 />
+      </Box>
     </Box>
   );
 };

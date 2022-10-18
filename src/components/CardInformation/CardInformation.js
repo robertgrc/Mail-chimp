@@ -10,54 +10,55 @@ const CardInformation = ({ title, description, imgUrl }) => {
         sx={{
           width: "66.13px",
           height: "66.13px",
-          marginTop: "67px",
-          marginLeft: "109px",
+          marginTop: "66.68px",
+          marginLeft: "109.47px",
         }}
       />
-      <Box sx={{ width: "177.27px", height: "78.91px", marginLeft: "60px" }}>
-        <Box
+
+      <Box
+        sx={{
+          width: "153.93px",
+          height: "23.34px",
+          marginLeft: "60px",
+        }}
+      >
+        <Typography
           sx={{
-            width: "153.93px",
-            height: "23.34px",
+            marginTop: "7px",
+            marginLeft: "10px",
+            fontSize: "18px",
+            fontFamily: "Noto Sans",
+            fontStyle: "normal",
+            fontWeight: "500",
+            lineHeight: "25px",
+            textAlign: "center",
+            color: "#374A5E",
           }}
         >
-          <Typography
-            sx={{
-              marginTop: "7px",
-              marginLeft: "10px",
-              fontSize: "18px",
-              fontFamily: "Noto Sans",
-              fontStyle: "normal",
-              fontWeight: "500",
-              lineHeight: "25px",
-              textAlign: "center",
-              color: "#374A5E",
-            }}
-          >
-            {title}
-          </Typography>
-        </Box>
-        <Box
+          {title}
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          width: "177.27px",
+          height: "41.12px",
+          marginLeft: "50.57px",
+        }}
+      >
+        <Typography
           sx={{
-            width: "177.27px",
-            height: "41.12px",
+            fontSize: "14px",
+            marginTop: "14.45px",
+            fontFamily: "Noto Sans",
+            fontStyle: "normal",
+            fontWeight: "400",
+            lineHeight: "20px",
+            textAlign: "center",
+            color: "#33475B",
           }}
         >
-          <Typography
-            sx={{
-              fontSize: "15px",
-              marginTop: "14px",
-              fontFamily: "Noto Sans",
-              fontStyle: "normal",
-              fontWeight: "400",
-              lineHeight: "20px",
-              textAlign: "center",
-              color: "#33475B",
-            }}
-          >
-            {description}
-          </Typography>
-        </Box>
+          {description}
+        </Typography>
       </Box>
     </Stack>
   );
