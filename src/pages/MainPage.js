@@ -3,8 +3,13 @@ import React from "react";
 //import Blob from "../assets/Blob.jpg";
 import GmailCard from "../components/GmailCard/GmailCard";
 import MailChimpCard from "../components/MailChimpCard/MailChimpCard";
+import SyncContacts from "../components/SyncContacts/SyncContacts";
 
 const MainPage = () => {
+  const handleSyncContacts = () => {
+    console.log("contacto seleccionado");
+  };
+
   return (
     <Box
       sx={{
@@ -19,8 +24,11 @@ const MainPage = () => {
       <Box sx={{}}>
         <GmailCard />
       </Box>
+
+      <SyncContacts />
+
       <Box sx={{}}>
-        <MailChimpCard />
+        <MailChimpCard handleSyncContacts={handleSyncContacts} />
       </Box>
       {/* <Avatar
         src={Blob}
