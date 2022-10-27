@@ -1,14 +1,28 @@
 import { Box } from "@mui/material";
-import React from "react";
+import { useState } from "react";
 import Blob from "../components/Blob/Blob";
+import EnviarProps from "../components/EnviarProps/EnviarProps";
 //import Blob from "../assets/Blob.jpg";
 import GmailCard from "../components/GmailCard/GmailCard";
 import MailChimpCard from "../components/MailChimpCard/MailChimpCard";
 import SyncContacts from "../components/SyncContacts/SyncContacts";
+import { gmailDropdowData, mailChimpDropdownData } from "./data";
 
 const MainPage = () => {
+  const [selectContacts, setSelectContacts] = useState({
+    Gmail: gmailDropdowData,
+    Mailchimp: mailChimpDropdownData,
+  });
+
+  const handleContactSelection = (contacts) => {
+    const { platform, selected } = contacts;
+    const newSelection = JSON.parse(JSON.stringify(selectContacts));
+    newSelection[platform] = selected;
+    setSelectContacts(newSelection);
+  };
+
   const handleSyncContacts = () => {
-    console.log("contacto seleccionado");
+    console.log("Sync Contacts:", selectContacts);
   };
 
   return (
@@ -22,7 +36,10 @@ const MainPage = () => {
       }}
     >
       <Box sx={{ marginTop: "164px", marginLeft: "342px", zIndex: "2" }}>
-        <GmailCard />
+        <GmailCard
+          handleContactSelection={handleContactSelection}
+          dropDownOptions={gmailDropdowData}
+        />
       </Box>
 
       <Box
@@ -33,15 +50,19 @@ const MainPage = () => {
           zIndex: "2",
         }}
       >
-        <SyncContacts />
+        <SyncContacts handleSyncContacts={handleSyncContacts} />
       </Box>
 
       <Box sx={{ marginTop: "164px", zIndex: "2" }}>
-        <MailChimpCard handleSyncContacts={handleSyncContacts} />
+        <MailChimpCard
+          handleContactSelection={handleContactSelection}
+          dropDownOptions={mailChimpDropdownData}
+        />
       </Box>
       <Box sx={{ zIndex: "1" }}>
         <Blob />
       </Box>
+      <EnviarProps />
     </Box>
   );
 };

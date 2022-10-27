@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Avatar,
-  //Avatar,
   Box,
   Checkbox,
   Collapse,
@@ -12,8 +11,6 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
-  //ListItemIcon,
   ListItemText,
   MenuItem,
 } from "@mui/material";
@@ -24,11 +21,25 @@ import newIcon from "../../assets/Dropdown/newIcon.svg";
 import Polygon2 from "../../assets/Dropdown/Polygon2.svg";
 
 const array = ["Family", "Work Friends", "Another Label"];
+//"New contact","Service",
+//const [openCollapse, setOpenCollapse] = useState(false);
+//const [contactSelectOptions, setContactSelectOptions] = useState([])
+// const handleOptionSelected = ()=>{
 
-const DropDownPrueba = () => {
-  const [openCollapse, setOpenCollapse] = useState(false);
+// }
 
-  //const dispatch = useDispatch();
+const DropDownPrueba = ({
+  handleContactSelection,
+  setOpenCollapse,
+  openCollapse,
+}) => {
+  const [optionChecked, setOptionChecked] = useState(false);
+
+  console.log({ optionChecked });
+
+  const handleOptionCheked = (e) => {
+    setOptionChecked(e.target.checked);
+  };
 
   return (
     <Box
@@ -41,14 +52,14 @@ const DropDownPrueba = () => {
         border: "1px solid #CBD6E2",
         borderRadius: "2px",
         display: "flex",
-        justifyContent: "space-between",
+        flexWrap: "wrap",
       }}
     >
       {/* <Box sx={{ width: "15.55", height: "11.65px" }}>{"<"}</Box> */}
       <MenuItem sx={{ display: "flex" }}>
         <IconButton>
           <Avatar
-            sx={{ width: "15.55px", height: "11.65px" }}
+            sx={{ width: "15.55px", height: "11.65px", marginLeft: "3px" }}
             //sx={{ width: "15.55", height: "11.65px", background: "#7C99B6" }}
             src={newIcon}
           />
@@ -61,16 +72,17 @@ const DropDownPrueba = () => {
             fontSize: "16px",
             lineHeight: "22px",
             color: "#33475B",
+            marginLeft: "15.8px",
           }}
           primary={"All contacts"}
         />
         <Avatar
           sx={{
-            width: "16.27px",
+            width: "15px",
             height: "10.24px",
             borderRadius: "1px",
-
-            //transform: "rotate(180deg)",
+            marginLeft: "40.11px",
+            transform: openCollapse && "rotate(180deg)",
           }}
           onClick={() => setOpenCollapse(!openCollapse)}
           src={Polygon2}
@@ -79,11 +91,30 @@ const DropDownPrueba = () => {
       <Collapse in={openCollapse}>
         <List
           sx={{
-            width: 216.72,
-            height: 44.46,
+            maxWidth: "217px",
+            height: "110px",
             background: "#F5F8FA",
             border: "1px solid #CBD6E2",
             borderRadius: "2px",
+            display: "flex",
+            flexWrap: "wrap",
+
+            //borderTop: "none",
+            "&::-webkit-scrollbar": {
+              width: "3 rem",
+            },
+            "&::-webkit-scrollbar-trank": {
+              backgroundColor: "rgb(24, 24, 29)",
+              //boxShadow: "inset 0 0 6px rgba(0, 0, 0, 0.00)",
+              //WebkitBoxShadow: "inset 0 0 6px rgba(0, 0, 0, 0.00)",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              //backgroundColor: "rgba(0, 0, 0, .1)",
+              background: "red",
+              border: "5px, solid, transparent",
+              borderRadius: "9px",
+              backgroundClip: "contentBox",
+            },
           }}
         >
           {array.map((listElem) => (
@@ -92,15 +123,39 @@ const DropDownPrueba = () => {
                 <FormControl component="fieldset">
                   <FormGroup aria-label="position" row>
                     <FormControlLabel
+                      sx={{
+                        width: "20px",
+                        height: "14px",
+                        paddingLeft: "6px",
+                      }}
                       value="start"
-                      control={<Checkbox color="primary" />}
+                      control={
+                        <Checkbox
+                          color="primary"
+                          checked={optionChecked}
+                          onChange={handleOptionCheked}
+                          //sx={{ backgroundColor: "red" }}
+                        />
+                      }
                     />
                   </FormGroup>
                 </FormControl>
                 {/* <ListItemIcon>{}</ListItemIcon> */}
               </Box>
 
-              <ListItemButton>
+              <ListItemButton
+                sx={{
+                  width: "14px",
+                  height: "14px",
+                  marginLeft: "7px",
+                  fontFamily: "Noto Sans",
+                  fontStyle: "normal",
+                  fontWeight: "400",
+                  fontSize: "16px",
+                  lineHeight: "22px",
+                  color: "#33475B",
+                }}
+              >
                 <ListItemText primary={listElem} />
               </ListItemButton>
             </ListItem>
