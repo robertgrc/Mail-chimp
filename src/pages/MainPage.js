@@ -1,28 +1,50 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
 import Blob from "../components/Blob/Blob";
-import EnviarProps from "../components/EnviarProps/EnviarProps";
 //import Blob from "../assets/Blob.jpg";
 import GmailCard from "../components/GmailCard/GmailCard";
 import MailChimpCard from "../components/MailChimpCard/MailChimpCard";
 import SyncContacts from "../components/SyncContacts/SyncContacts";
-import { gmailDropdowData, mailChimpDropdownData } from "./data";
+//import { gmailDropdowData, mailChimpDropdownData } from "./data";
 
 const MainPage = () => {
-  const [selectContacts, setSelectContacts] = useState({
-    Gmail: gmailDropdowData,
-    Mailchimp: mailChimpDropdownData,
-  });
+  // const [selectContacts, setSelectContacts] = useState({
+  //   Gmail: gmailDropdowData,
+  //   Mailchimp: mailChimpDropdownData,
+  // });
 
-  const handleContactSelection = (contacts) => {
-    const { platform, selected } = contacts;
-    const newSelection = JSON.parse(JSON.stringify(selectContacts));
-    newSelection[platform] = selected;
-    setSelectContacts(newSelection);
-  };
+  // console.log({ selectContacts });
+
+  const gmailDropdownData = [
+    {
+      label: "Family",
+      selected: "false",
+      id: 1,
+    },
+    {
+      label: "Work Friends",
+      selected: "true",
+      id: 2,
+    },
+    {
+      label: "Another Label",
+      selected: "true",
+      id: 3,
+    },
+    {
+      label: "Parents",
+      selected: "false",
+      id: 4,
+    },
+    {
+      label: "Best Friends",
+      selected: "false",
+      id: 5,
+    },
+  ];
 
   const handleSyncContacts = () => {
-    console.log("Sync Contacts:", selectContacts);
+    console.log("Sync Contacts:");
   };
 
   return (
@@ -36,10 +58,7 @@ const MainPage = () => {
       }}
     >
       <Box sx={{ marginTop: "164px", marginLeft: "342px", zIndex: "2" }}>
-        <GmailCard
-          handleContactSelection={handleContactSelection}
-          dropDownOptions={gmailDropdowData}
-        />
+        <GmailCard gmailDropdownData={gmailDropdownData} />
       </Box>
 
       <Box
@@ -54,15 +73,11 @@ const MainPage = () => {
       </Box>
 
       <Box sx={{ marginTop: "164px", zIndex: "2" }}>
-        <MailChimpCard
-          handleContactSelection={handleContactSelection}
-          dropDownOptions={mailChimpDropdownData}
-        />
+        <MailChimpCard />
       </Box>
       <Box sx={{ zIndex: "1" }}>
         <Blob />
       </Box>
-      <EnviarProps />
     </Box>
   );
 };

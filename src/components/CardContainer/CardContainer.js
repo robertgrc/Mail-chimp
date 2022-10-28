@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import { useState } from "react";
 import CardInformation from "../CardInformation/CardInformation";
+//import NewDropDown from "../NewDropDown/NewDropDown";
 //import SelectDropdown from "../SelectDropdown/SelectDropdown";
 //import DropDownPrueba from "../DropDownPrueba/DropDownPrueba";
 import DropDownPrueba2 from "../DropDownPrueba2/DropDownPrueba2";
@@ -9,10 +10,13 @@ const CardContainer = ({
   title,
   description,
   imgUrl,
+  options,
   handleContactSelection,
+  gmailDropdownData,
 }) => {
   //const containerWidth =  isDropdownOpen ? '150px' : '100px';
   //height: openCollapse && "433px",
+  //console.log(gmailDropdownData);
 
   const [openCollapse, setOpenCollapse] = useState(false);
 
@@ -42,8 +46,11 @@ const CardContainer = ({
       >
         <DropDownPrueba2
           handleContactSelection={handleContactSelection}
+          title={title}
+          options={options}
           setOpenCollapse={setOpenCollapse}
           openCollapse={openCollapse}
+          gmailDropdownData={gmailDropdownData}
         />
       </Box>
     </Box>

@@ -20,7 +20,14 @@ import {
 import newIcon from "../../assets/Dropdown/newIcon.svg";
 import Polygon2 from "../../assets/Dropdown/Polygon2.svg";
 
-const array = ["Family", "Work Friends", "Another Label"];
+const array = [
+  "Family",
+  "Work Friends",
+  "Another Label",
+  "Family",
+  "Work Friends",
+  "Another Label",
+];
 //"New contact","Service",
 //const [openCollapse, setOpenCollapse] = useState(false);
 //const [contactSelectOptions, setContactSelectOptions] = useState([])
@@ -28,18 +35,31 @@ const array = ["Family", "Work Friends", "Another Label"];
 
 // }
 
-const DropDownPrueba = ({
+const DropDownPrueba2 = ({
   handleContactSelection,
   setOpenCollapse,
   openCollapse,
+  gmailDropdownData = [],
 }) => {
   const [optionChecked, setOptionChecked] = useState(false);
 
-  console.log({ optionChecked });
+  // const { label, selected, id } = gmailDropdownData;
+  // console.log(label);
 
-  const handleOptionCheked = (e) => {
-    setOptionChecked(e.target.checked);
+  const handleOptionCheked = (index) => {
+    console.log("handleOptionCheked: ", index);
+    // setOptionChecked(e.target.checked);
   };
+
+  // let arregloLabel = gmailDropdownData.map(function (elem) {
+  //   let returnObject = {
+  //     label: elem.label,
+  //   };
+  //   return returnObject;
+  // });
+  // console.log(arregloLabel);
+
+  const dropDownOptionsArray = gmailDropdownData.map((item) => item.label);
 
   return (
     <Box
@@ -91,6 +111,7 @@ const DropDownPrueba = ({
       <Collapse in={openCollapse}>
         <List
           sx={{
+            overflow: "auto",
             maxWidth: "217px",
             height: "110px",
             background: "#F5F8FA",
@@ -117,8 +138,8 @@ const DropDownPrueba = ({
             },
           }}
         >
-          {array.map((listElem) => (
-            <ListItem>
+          {dropDownOptionsArray.map((listElem, index) => (
+            <ListItem key={index}>
               <Box>
                 <FormControl component="fieldset">
                   <FormGroup aria-label="position" row>
@@ -129,18 +150,19 @@ const DropDownPrueba = ({
                         paddingLeft: "6px",
                       }}
                       value="start"
+                      // label="otro"
+                      onClick={() => handleOptionCheked(index)}
                       control={
                         <Checkbox
                           color="primary"
-                          checked={optionChecked}
-                          onChange={handleOptionCheked}
+                          checked={false}
+                          // onChange={handleOptionCheked(index)}
                           //sx={{ backgroundColor: "red" }}
                         />
                       }
                     />
                   </FormGroup>
                 </FormControl>
-                {/* <ListItemIcon>{}</ListItemIcon> */}
               </Box>
 
               <ListItemButton
@@ -166,4 +188,4 @@ const DropDownPrueba = ({
   );
 };
 
-export default DropDownPrueba;
+export default DropDownPrueba2;

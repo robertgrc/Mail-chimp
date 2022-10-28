@@ -1,43 +1,63 @@
-export const gmailDropdowData = [
+export const gmailDropdownData = [
   {
-    name: "Family",
+    label: "Family",
+    selected: "false",
+    id: 1,
   },
 
   {
-    name: "Work Friends",
+    label: "Work Friends",
+    selected: "false",
+    id: 2,
   },
 
   {
-    name: "Another Label",
+    label: "Another Label",
+    selected: "false",
+    id: 3,
   },
 
   {
-    name: "Parents",
+    label: "Parents",
+    selected: "false",
+    id: 4,
   },
 
   {
-    name: "Best Friends",
+    label: "Best Friends",
+    selected: "false",
+    id: 5,
   },
 ];
 
 export const mailChimpDropdownData = [
   {
-    name: "Family",
+    label: "Family",
+    selected: "false",
+    id: 1,
   },
 
   {
-    name: "Work Friends",
+    label: "Work Friends",
+    selected: "false",
+    id: 2,
   },
 
   {
-    name: "Another Label",
+    label: "Another Label",
+    selected: "false",
+    id: 3,
   },
 
   {
-    name: "Parents",
+    label: "Parents",
+    selected: "false",
+    id: 4,
   },
 
   {
-    name: "Best Friends",
+    label: "Best Friends",
+    selected: "false",
+    id: 5,
   },
 ];
