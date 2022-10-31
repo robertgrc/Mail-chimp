@@ -14,52 +14,25 @@ import {
   ListItemText,
   MenuItem,
 } from "@mui/material";
-//import { useDispatch } from "react-redux";
-//import Icono1 from "../../assets/Dropdown/Icono1.jpg";
-//import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+
 import newIcon from "../../assets/Dropdown/newIcon.svg";
 import Polygon2 from "../../assets/Dropdown/Polygon2.svg";
-
-const array = [
-  "Family",
-  "Work Friends",
-  "Another Label",
-  "Family",
-  "Work Friends",
-  "Another Label",
-];
-//"New contact","Service",
-//const [openCollapse, setOpenCollapse] = useState(false);
-//const [contactSelectOptions, setContactSelectOptions] = useState([])
-// const handleOptionSelected = ()=>{
-
-// }
 
 const DropDownPrueba2 = ({
   handleContactSelection,
   setOpenCollapse,
   openCollapse,
-  gmailDropdownData = [],
+  dropdowndata = [],
+  selectContacts,
 }) => {
   const [optionChecked, setOptionChecked] = useState(false);
 
-  // const { label, selected, id } = gmailDropdownData;
-  // console.log(label);
-
   const handleOptionCheked = (index) => {
     console.log("handleOptionCheked: ", index);
-    // setOptionChecked(e.target.checked);
+    setOptionChecked(!optionChecked);
   };
 
-  // let arregloLabel = gmailDropdownData.map(function (elem) {
-  //   let returnObject = {
-  //     label: elem.label,
-  //   };
-  //   return returnObject;
-  // });
-  // console.log(arregloLabel);
-
-  const dropDownOptionsArray = gmailDropdownData.map((item) => item.label);
+  const dropDownOptionsArray = dropdowndata.map((item) => item.label);
 
   return (
     <Box
@@ -155,8 +128,8 @@ const DropDownPrueba2 = ({
                       control={
                         <Checkbox
                           color="primary"
-                          checked={false}
-                          // onChange={handleOptionCheked(index)}
+                          checked={optionChecked}
+
                           //sx={{ backgroundColor: "red" }}
                         />
                       }

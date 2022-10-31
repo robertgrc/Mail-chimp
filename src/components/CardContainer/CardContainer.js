@@ -12,7 +12,7 @@ const CardContainer = ({
   imgUrl,
   options,
   handleContactSelection,
-  gmailDropdownData,
+  dropdowndata,
 }) => {
   //const containerWidth =  isDropdownOpen ? '150px' : '100px';
   //height: openCollapse && "433px",
@@ -50,7 +50,7 @@ const CardContainer = ({
           options={options}
           setOpenCollapse={setOpenCollapse}
           openCollapse={openCollapse}
-          gmailDropdownData={gmailDropdownData}
+          dropdowndata={dropdowndata}
         />
       </Box>
     </Box>

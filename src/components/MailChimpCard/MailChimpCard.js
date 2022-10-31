@@ -2,7 +2,7 @@ import React from "react";
 import CardContainer from "../CardContainer/CardContainer";
 import Iconchimp from "../../assets/gmail/Iconchimp.jpg";
 
-const MailChimpCard = () => {
+const MailChimpCard = ({ dropdowndata }) => {
   return (
     <CardContainer
       title="Mailchimp"
@@ -10,6 +10,7 @@ const MailChimpCard = () => {
       sync to Gmail"
       imgUrl={Iconchimp}
       alt="Iconchimp"
+      dropdowndata={dropdowndata}
     />
   );
 };

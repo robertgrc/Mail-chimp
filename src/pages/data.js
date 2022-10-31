@@ -50,13 +50,13 @@ export const mailChimpDropdownData = [
   },
 
   {
-    label: "Parents",
+    label: "College",
     selected: "false",
     id: 4,
   },
 
   {
-    label: "Best Friends",
+    label: "School",
     selected: "false",
     id: 5,
   },

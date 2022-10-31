@@ -5,7 +5,8 @@ import IconGmail from "../../assets/gmail/IconGmail.jpg";
 const GmailCard = ({
   handleContactSelection,
   dropDownOptions,
-  gmailDropdownData,
+  dropdowndata,
+  selectContacts,
 }) => {
   //console.log(gmailDropdownData);
 
@@ -18,7 +19,8 @@ const GmailCard = ({
       sync to MailChimp"
       imgUrl={IconGmail}
       alt="Iconchimp"
-      gmailDropdownData={gmailDropdownData}
+      dropdowndata={dropdowndata}
+      selectContacts={selectContacts}
     />
   );
 };
