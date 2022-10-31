@@ -22,15 +22,26 @@ const DropDownPrueba2 = ({
   handleContactSelection,
   setOpenCollapse,
   openCollapse,
-  dropdowndata = [],
-  selectContacts,
+  dropdowndata,
 }) => {
-  const [optionChecked, setOptionChecked] = useState(false);
+  const [contactOptionChecked, setContactOptionChecked] = useState([
+    ...dropdowndata,
+  ]);
 
-  const handleOptionCheked = (index) => {
-    console.log("handleOptionCheked: ", index);
-    setOptionChecked(!optionChecked);
+  // const [updateState, setUpdateState] = useState(
+  //   useState([...contactOptionChecked])
+  // );
+
+  const handleOptionChecked = (index) => {
+    console.log("handleOptionChecked: ", index);
+    const newContact = [...contactOptionChecked];
+    newContact[index].checked = !newContact[index].checked;
+
+    setContactOptionChecked(newContact);
+    console.log(newContact);
   };
+
+  console.log(contactOptionChecked);
 
   const dropDownOptionsArray = dropdowndata.map((item) => item.label);
 
@@ -48,12 +59,10 @@ const DropDownPrueba2 = ({
         flexWrap: "wrap",
       }}
     >
-      {/* <Box sx={{ width: "15.55", height: "11.65px" }}>{"<"}</Box> */}
       <MenuItem sx={{ display: "flex" }}>
         <IconButton>
           <Avatar
             sx={{ width: "15.55px", height: "11.65px", marginLeft: "3px" }}
-            //sx={{ width: "15.55", height: "11.65px", background: "#7C99B6" }}
             src={newIcon}
           />
         </IconButton>
@@ -124,12 +133,11 @@ const DropDownPrueba2 = ({
                       }}
                       value="start"
                       // label="otro"
-                      onClick={() => handleOptionCheked(index)}
+                      onClick={() => handleOptionChecked(index)}
                       control={
                         <Checkbox
                           color="primary"
-                          checked={optionChecked}
-
+                          checked={contactOptionChecked[index].checked}
                           //sx={{ backgroundColor: "red" }}
                         />
                       }

@@ -13,7 +13,11 @@ const MainPage = () => {
     Mailchimp: mailChimpDropdownData,
   });
 
-  console.log({ selectContacts });
+  // console.log({ selectContacts });
+
+  // const handleContactSelect = (contacts) => {
+  //   setSelectContacts(newContactSelection);
+  // };
 
   const handleSyncContacts = () => {
     console.log("Sync Contacts:");

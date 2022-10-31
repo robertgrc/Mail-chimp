@@ -1,31 +1,31 @@
 export const gmailDropdownData = [
   {
     label: "Family",
-    selected: "false",
+    checked: "true",
     id: 1,
   },
 
   {
     label: "Work Friends",
-    selected: "false",
+    checked: "true",
     id: 2,
   },
 
   {
     label: "Another Label",
-    selected: "false",
+    checked: "true",
     id: 3,
   },
 
   {
     label: "Parents",
-    selected: "false",
+    checked: "false",
     id: 4,
   },
 
   {
     label: "Best Friends",
-    selected: "false",
+    checked: "false",
     id: 5,
   },
 ];
@@ -33,31 +33,31 @@ export const gmailDropdownData = [
 export const mailChimpDropdownData = [
   {
     label: "Family",
-    selected: "false",
+    checked: "false",
     id: 1,
   },
 
   {
     label: "Work Friends",
-    selected: "false",
+    checked: "true",
     id: 2,
   },
 
   {
     label: "Another Label",
-    selected: "false",
+    checked: "true",
     id: 3,
   },
 
   {
     label: "College",
-    selected: "false",
+    checked: "false",
     id: 4,
   },
 
   {
     label: "School",
-    selected: "false",
+    checked: "false",
     id: 5,
   },
 ];
