@@ -4,6 +4,7 @@ import Blob from "../components/Blob/Blob";
 //import Blob from "../assets/Blob.jpg";
 import GmailCard from "../components/GmailCard/GmailCard";
 import MailChimpCard from "../components/MailChimpCard/MailChimpCard";
+import Practica from "../components/Practice/Practica";
 import SyncContacts from "../components/SyncContacts/SyncContacts";
 import { gmailDropdownData, mailChimpDropdownData } from "./data";
 
@@ -18,6 +19,11 @@ const MainPage = () => {
   };
   const [addSyncContacts, setAddSyncContacts] = useState();
   console.log(addSyncContacts);
+
+  // const newContactsToAdd = addSyncContacts.Gmail.filter(
+  //   (nuevoContacto) => nuevoContacto === true
+  // );
+  // console.log(newContactsToAdd);
 
   // const newContactsToAdd = addSyncContacts.filter(
   //   (nuevoContacto) => nuevoContacto === true
@@ -65,6 +71,7 @@ const MainPage = () => {
       <Box sx={{ zIndex: "1" }}>
         <Blob />
       </Box>
+      <Practica />
     </Box>
   );
 };
