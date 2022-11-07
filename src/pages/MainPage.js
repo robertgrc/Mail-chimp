@@ -15,10 +15,16 @@ const MainPage = () => {
   });
 
   const handleContactSelection = (newContact) => {
-    console.log(newContact);
+    let contactsToAdd = newContact.filter(
+      (contact) => contact.checked === true
+    );
+    console.log(contactsToAdd);
   };
-  const [addSyncContacts, setAddSyncContacts] = useState();
-  console.log(addSyncContacts);
+
+  //const [addSyncContacts, setAddSyncContacts] = useState(selectContacts);
+
+  // const [addSyncContacts, setAddSyncContacts] = useState(selectContacts);
+  // console.log(addSyncContacts);
 
   // const newContactsToAdd = addSyncContacts.Gmail.filter(
   //   (nuevoContacto) => nuevoContacto === true
@@ -71,7 +77,7 @@ const MainPage = () => {
       <Box sx={{ zIndex: "1" }}>
         <Blob />
       </Box>
-      <Practica />
+      {/* <Practica /> */}
     </Box>
   );
 };
