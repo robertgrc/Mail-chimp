@@ -39,6 +39,7 @@ const DropDownPrueba2 = ({
 
     setContactOptionChecked(newContact);
     console.log(newContact);
+    handleContactSelection(newContact);
   };
 
   console.log(contactOptionChecked);

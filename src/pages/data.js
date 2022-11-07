@@ -1,63 +1,63 @@
 export const gmailDropdownData = [
   {
     label: "Family",
-    checked: "true",
+    checked: false,
     id: 1,
   },
 
   {
     label: "Work Friends",
-    checked: "true",
+    checked: false,
     id: 2,
   },
 
   {
     label: "Another Label",
-    checked: "true",
+    checked: false,
     id: 3,
   },
 
   {
     label: "Parents",
-    checked: "false",
+    checked: false,
     id: 4,
   },
 
   {
     label: "Best Friends",
-    checked: "false",
+    checked: false,
     id: 5,
   },
 ];
 
 export const mailChimpDropdownData = [
   {
-    label: "Family",
-    checked: "false",
+    label: "Familychimp",
+    checked: false,
     id: 1,
   },
 
   {
-    label: "Work Friends",
-    checked: "true",
+    label: "Work Chimp",
+    checked: false,
     id: 2,
   },
 
   {
-    label: "Another Label",
-    checked: "true",
+    label: "Another chimp",
+    checked: false,
     id: 3,
   },
 
   {
-    label: "College",
-    checked: "false",
+    label: "College chimp",
+    checked: false,
     id: 4,
   },
 
   {
-    label: "School",
-    checked: "false",
+    label: "School chimp",
+    checked: false,
     id: 5,
   },
 ];

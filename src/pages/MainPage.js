@@ -13,11 +13,17 @@ const MainPage = () => {
     Mailchimp: mailChimpDropdownData,
   });
 
-  // console.log({ selectContacts });
+  const handleContactSelection = (newContact) => {
+    console.log(newContact);
+  };
+  const [addSyncContacts, setAddSyncContacts] = useState();
+  console.log(addSyncContacts);
 
-  // const handleContactSelect = (contacts) => {
-  //   setSelectContacts(newContactSelection);
-  // };
+  // const newContactsToAdd = addSyncContacts.filter(
+  //   (nuevoContacto) => nuevoContacto === true
+  // );
+  // setAddSyncContacts([...addSyncContacts, newContactsToAdd]);
+  // console.log(setAddSyncContacts);
 
   const handleSyncContacts = () => {
     console.log("Sync Contacts:");
@@ -28,13 +34,15 @@ const MainPage = () => {
       sx={{
         width: "1440px",
         height: "1024px",
-        // backgroundColor: "green",
         display: "flex",
         alignItems: "flex-start",
       }}
     >
       <Box sx={{ marginTop: "164px", marginLeft: "342px", zIndex: "2" }}>
-        <GmailCard dropdowndata={gmailDropdownData} />
+        <GmailCard
+          dropdowndata={gmailDropdownData}
+          handleContactSelection={handleContactSelection}
+        />
       </Box>
 
       <Box
@@ -49,7 +57,10 @@ const MainPage = () => {
       </Box>
 
       <Box sx={{ marginTop: "164px", zIndex: "2" }}>
-        <MailChimpCard dropdowndata={mailChimpDropdownData} />
+        <MailChimpCard
+          dropdowndata={mailChimpDropdownData}
+          handleContactSelection={handleContactSelection}
+        />
       </Box>
       <Box sx={{ zIndex: "1" }}>
         <Blob />

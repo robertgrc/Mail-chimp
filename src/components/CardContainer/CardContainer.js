@@ -14,10 +14,6 @@ const CardContainer = ({
   handleContactSelection,
   dropdowndata,
 }) => {
-  //const containerWidth =  isDropdownOpen ? '150px' : '100px';
-  //height: openCollapse && "433px",
-  //console.log(gmailDropdownData);
-
   const [openCollapse, setOpenCollapse] = useState(false);
 
   return (
@@ -32,7 +28,6 @@ const CardContainer = ({
       }}
     >
       <CardInformation
-        //onOpenCollapse={e}
         sx={{}}
         title={title}
         description={description}
