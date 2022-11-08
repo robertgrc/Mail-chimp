@@ -23,6 +23,7 @@ const DropDownPrueba2 = ({
   setOpenCollapse,
   openCollapse,
   dropdowndata,
+  appName,
 }) => {
   const [contactOptionChecked, setContactOptionChecked] = useState([
     ...dropdowndata,
@@ -38,11 +39,11 @@ const DropDownPrueba2 = ({
     newContact[index].checked = !newContact[index].checked;
 
     setContactOptionChecked(newContact);
-    console.log(newContact);
-    handleContactSelection(newContact);
+    // console.log(newContact);
+    handleContactSelection(newContact, appName);
   };
 
-  console.log(contactOptionChecked);
+  //console.log(contactOptionChecked);
 
   const dropDownOptionsArray = dropdowndata.map((item) => item.label);
 

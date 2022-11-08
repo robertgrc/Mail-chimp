@@ -4,7 +4,7 @@ import Blob from "../components/Blob/Blob";
 //import Blob from "../assets/Blob.jpg";
 import GmailCard from "../components/GmailCard/GmailCard";
 import MailChimpCard from "../components/MailChimpCard/MailChimpCard";
-import Practica from "../components/Practice/Practica";
+//import Practica from "../components/Practice/Practica";
 import SyncContacts from "../components/SyncContacts/SyncContacts";
 import { gmailDropdownData, mailChimpDropdownData } from "./data";
 
@@ -14,31 +14,20 @@ const MainPage = () => {
     Mailchimp: mailChimpDropdownData,
   });
 
-  const handleContactSelection = (newContact) => {
+  const handleContactSelection = (newContact, appName) => {
     let contactsToAdd = newContact.filter(
       (contact) => contact.checked === true
     );
     console.log(contactsToAdd);
+    console.log(appName);
+    handleSyncContacts(contactsToAdd);
+    setSelectContacts(contactsToAdd);
   };
 
-  //const [addSyncContacts, setAddSyncContacts] = useState(selectContacts);
+  console.log(selectContacts);
 
-  // const [addSyncContacts, setAddSyncContacts] = useState(selectContacts);
-  // console.log(addSyncContacts);
-
-  // const newContactsToAdd = addSyncContacts.Gmail.filter(
-  //   (nuevoContacto) => nuevoContacto === true
-  // );
-  // console.log(newContactsToAdd);
-
-  // const newContactsToAdd = addSyncContacts.filter(
-  //   (nuevoContacto) => nuevoContacto === true
-  // );
-  // setAddSyncContacts([...addSyncContacts, newContactsToAdd]);
-  // console.log(setAddSyncContacts);
-
-  const handleSyncContacts = () => {
-    console.log("Sync Contacts:");
+  const handleSyncContacts = (contactsToAdd) => {
+    console.log("Sync Contacts:", contactsToAdd);
   };
 
   return (

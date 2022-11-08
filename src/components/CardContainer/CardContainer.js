@@ -13,6 +13,7 @@ const CardContainer = ({
   options,
   handleContactSelection,
   dropdowndata,
+  appName,
 }) => {
   const [openCollapse, setOpenCollapse] = useState(false);
 
@@ -46,6 +47,7 @@ const CardContainer = ({
           setOpenCollapse={setOpenCollapse}
           openCollapse={openCollapse}
           dropdowndata={dropdowndata}
+          appName={appName}
         />
       </Box>
     </Box>

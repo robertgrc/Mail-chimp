@@ -21,6 +21,7 @@ const GmailCard = ({
       alt="Iconchimp"
       dropdowndata={dropdowndata}
       selectContacts={selectContacts}
+      appName="Gmail"
     />
   );
 };
