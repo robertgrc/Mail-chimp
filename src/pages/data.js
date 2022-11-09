@@ -24,7 +24,7 @@ export const gmailDropdownData = [
   },
 
   {
-    label: "Best Friends",
+    label: "BestFriends",
     checked: false,
     id: 5,
   },

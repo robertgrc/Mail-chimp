@@ -14,20 +14,18 @@ const MainPage = () => {
     Mailchimp: mailChimpDropdownData,
   });
 
+  const [contactsToAdd, setContactsToAdd] = useState([]);
+
   const handleContactSelection = (newContact, appName) => {
     let contactsToAdd = newContact.filter(
       (contact) => contact.checked === true
     );
-    console.log(contactsToAdd);
-    console.log(appName);
-    handleSyncContacts(contactsToAdd);
-    setSelectContacts(contactsToAdd);
+    setContactsToAdd(contactsToAdd);
   };
 
-  console.log(selectContacts);
-
-  const handleSyncContacts = (contactsToAdd) => {
-    console.log("Sync Contacts:", contactsToAdd);
+  const onClickTogle = () => {
+    console.log(contactsToAdd);
+    console.log(selectContacts.Mailchimp);
   };
 
   return (
@@ -54,7 +52,7 @@ const MainPage = () => {
           zIndex: "2",
         }}
       >
-        <SyncContacts handleSyncContacts={handleSyncContacts} />
+        <SyncContacts onClickTogle={onClickTogle} />
       </Box>
 
       <Box sx={{ marginTop: "164px", zIndex: "2" }}>

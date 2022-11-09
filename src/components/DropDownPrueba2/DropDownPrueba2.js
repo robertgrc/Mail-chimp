@@ -34,7 +34,7 @@ const DropDownPrueba2 = ({
   // );
 
   const handleOptionChecked = (index) => {
-    console.log("handleOptionChecked: ", index);
+    //console.log("handleOptionChecked: ", index);
     const newContact = [...contactOptionChecked];
     newContact[index].checked = !newContact[index].checked;
 

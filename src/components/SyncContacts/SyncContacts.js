@@ -1,16 +1,15 @@
 import { Avatar, Box, Typography } from "@mui/material";
 import React, { useState } from "react";
-// import redArrow from "../../assets/syncImgs/redArrow.png";
-// import blackArrow from "../../assets/syncImgs/blackArrow.jpg";
 
 import SyncButton from "../../assets/syncImgs/SyncButton.jpg";
 
-const SyncContacts = () => {
+const SyncContacts = ({ onClickTogle }) => {
   const [syncContacts, setSyncContacts] = useState(true);
   const toggleSync = () => {
     setSyncContacts(!syncContacts);
+    onClickTogle();
   };
-  console.log(syncContacts);
+  //console.log(syncContacts);
 
   return (
     <Box>
@@ -23,7 +22,6 @@ const SyncContacts = () => {
           height: "133px",
           cursor: "pointer",
           zIndex: "2",
-
           // webkitTransform: "rotate(180deg)",
           // mozTransform: "rotate(180deg)",
           // oTransform: "rotate(180deg)",
