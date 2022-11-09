@@ -1,3 +1,4 @@
+import { CloudQueue } from "@mui/icons-material";
 import { Box } from "@mui/material";
 import { useState } from "react";
 import Blob from "../components/Blob/Blob";
@@ -16,6 +17,12 @@ const MainPage = () => {
 
   const [contactsToAdd, setContactsToAdd] = useState([]);
 
+  const [arrayMailchimp, setArrayMailchimp] = useState([
+    ...mailChimpDropdownData,
+  ]);
+
+  const [arrayGmail, setArrayGmail] = useState([...gmailDropdownData]);
+
   const handleContactSelection = (newContact, appName) => {
     let contactsToAdd = newContact.filter(
       (contact) => contact.checked === true
@@ -25,7 +32,12 @@ const MainPage = () => {
 
   const onClickTogle = () => {
     console.log(contactsToAdd);
-    console.log(selectContacts.Mailchimp);
+    let newArrayMailchimp = [...arrayMailchimp];
+    //newArrayMailchimp = newArrayMailchimp.concat(contactsToAdd);
+    console.log([...contactsToAdd, ...newArrayMailchimp]);
+    newArrayMailchimp = [...contactsToAdd];
+    //newArrayMailchimp = [...contactsToAdd, ...newArrayMailchimp];
+    setArrayMailchimp(newArrayMailchimp);
   };
 
   return (
@@ -57,7 +69,7 @@ const MainPage = () => {
 
       <Box sx={{ marginTop: "164px", zIndex: "2" }}>
         <MailChimpCard
-          dropdowndata={mailChimpDropdownData}
+          dropdowndata={arrayMailchimp}
           handleContactSelection={handleContactSelection}
         />
       </Box>
