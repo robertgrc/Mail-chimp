@@ -31,12 +31,11 @@ const MainPage = () => {
   };
 
   const onClickTogle = () => {
-    console.log(contactsToAdd);
     let newArrayMailchimp = [...arrayMailchimp];
     //newArrayMailchimp = newArrayMailchimp.concat(contactsToAdd);
-    console.log([...contactsToAdd, ...newArrayMailchimp]);
-    newArrayMailchimp = [...contactsToAdd];
-    //newArrayMailchimp = [...contactsToAdd, ...newArrayMailchimp];
+    //console.log([...contactsToAdd, ...newArrayMailchimp]);
+    //newArrayMailchimp = [...contactsToAdd];
+    newArrayMailchimp = [...newArrayMailchimp, ...contactsToAdd];
     setArrayMailchimp(newArrayMailchimp);
   };
 
@@ -51,7 +50,7 @@ const MainPage = () => {
     >
       <Box sx={{ marginTop: "164px", marginLeft: "342px", zIndex: "2" }}>
         <GmailCard
-          dropdowndata={gmailDropdownData}
+          dropdowndata={arrayGmail}
           handleContactSelection={handleContactSelection}
         />
       </Box>

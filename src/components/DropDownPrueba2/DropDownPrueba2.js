@@ -29,24 +29,18 @@ const DropDownPrueba2 = ({
     ...dropdowndata,
   ]);
 
-  // const [updateState, setUpdateState] = useState(
-  //   useState([...contactOptionChecked])
-  // );
-
   const handleOptionChecked = (index) => {
     //console.log("handleOptionChecked: ", index);
     const newContact = [...contactOptionChecked];
     newContact[index].checked = !newContact[index].checked;
-
     setContactOptionChecked(newContact);
-    // console.log(newContact);
     handleContactSelection(newContact, appName);
   };
 
   //console.log(contactOptionChecked);
 
+  console.log(dropdowndata);
   const dropDownOptionsArray = dropdowndata.map((item) => item.label);
-
   return (
     <Box
       sx={{
@@ -139,7 +133,7 @@ const DropDownPrueba2 = ({
                       control={
                         <Checkbox
                           color="primary"
-                          checked={contactOptionChecked[index].checked}
+                          //checked={contactOptionChecked[index].checked}
                           //sx={{ backgroundColor: "red" }}
                         />
                       }
