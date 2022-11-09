@@ -17,7 +17,7 @@ const CardContainer = ({
 }) => {
   const [openCollapse, setOpenCollapse] = useState(false);
 
-  console.log(dropdowndata);
+  //console.log(dropdowndata);
 
   return (
     <Box

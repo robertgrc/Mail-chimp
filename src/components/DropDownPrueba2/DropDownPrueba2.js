@@ -30,7 +30,7 @@ const DropDownPrueba2 = ({
   ]);
 
   const handleOptionChecked = (index) => {
-    //console.log("handleOptionChecked: ", index);
+    console.log("handleOptionChecked: ", index);
     const newContact = [...contactOptionChecked];
     newContact[index].checked = !newContact[index].checked;
     setContactOptionChecked(newContact);
@@ -118,6 +118,7 @@ const DropDownPrueba2 = ({
         >
           {dropDownOptionsArray.map((listElem, index) => (
             <ListItem key={index}>
+              {console.log(listElem + index)}
               <Box>
                 <FormControl component="fieldset">
                   <FormGroup aria-label="position" row>
@@ -133,7 +134,7 @@ const DropDownPrueba2 = ({
                       control={
                         <Checkbox
                           color="primary"
-                          //checked={contactOptionChecked[index].checked}
+                          checked={dropdowndata[index].checked}
                           //sx={{ backgroundColor: "red" }}
                         />
                       }
