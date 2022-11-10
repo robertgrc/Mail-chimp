@@ -17,11 +17,11 @@ const MainPage = () => {
 
   const [contactsToAdd, setContactsToAdd] = useState([]);
 
+  const [arrayGmail, setArrayGmail] = useState([...gmailDropdownData]);
+
   const [arrayMailchimp, setArrayMailchimp] = useState([
     ...mailChimpDropdownData,
   ]);
-
-  const [arrayGmail, setArrayGmail] = useState([...gmailDropdownData]);
 
   const handleContactSelection = (newContact, appName) => {
     let contactsToAdd = newContact.filter(
@@ -31,10 +31,10 @@ const MainPage = () => {
   };
 
   const onClickTogle = () => {
+    let newArrayGmail = [...arrayGmail];
+    newArrayGmail = [...newArrayGmail, ...contactsToAdd];
+    setArrayGmail(newArrayGmail);
     let newArrayMailchimp = [...arrayMailchimp];
-    //newArrayMailchimp = newArrayMailchimp.concat(contactsToAdd);
-    //console.log([...contactsToAdd, ...newArrayMailchimp]);
-    //newArrayMailchimp = [...contactsToAdd];
     newArrayMailchimp = [...newArrayMailchimp, ...contactsToAdd];
     setArrayMailchimp(newArrayMailchimp);
   };

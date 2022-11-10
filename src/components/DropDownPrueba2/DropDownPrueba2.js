@@ -118,7 +118,7 @@ const DropDownPrueba2 = ({
         >
           {dropDownOptionsArray.map((listElem, index) => (
             <ListItem key={index}>
-              {console.log(listElem + index)}
+              {/* {console.log(listElem + index)} */}
               <Box>
                 <FormControl component="fieldset">
                   <FormGroup aria-label="position" row>

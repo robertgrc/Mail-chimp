@@ -7,7 +7,7 @@ const SyncContacts = ({ onClickTogle }) => {
   const [syncContacts, setSyncContacts] = useState(true);
   const toggleSync = () => {
     setSyncContacts(!syncContacts);
-    onClickTogle();
+    syncContacts && onClickTogle();
   };
   //console.log(syncContacts);
 
