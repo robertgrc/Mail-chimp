@@ -31,11 +31,24 @@ const MainPage = () => {
   };
 
   const onClickTogle = () => {
+    let addMailChimp = contactsToAdd.filter(
+      (toAddMailchimp) => toAddMailchimp.appName === "Gmail"
+    );
+    let addGmail = contactsToAdd.filter(
+      (toAddGmail) => toAddGmail.appName === "Mailchimp"
+    );
+
     let newArrayGmail = [...arrayGmail];
-    newArrayGmail = [...newArrayGmail, ...contactsToAdd];
+    newArrayGmail = [...newArrayGmail, ...addGmail];
+    newArrayGmail.forEach((contact) => {
+      contact.checked = false;
+    });
     setArrayGmail(newArrayGmail);
     let newArrayMailchimp = [...arrayMailchimp];
-    newArrayMailchimp = [...newArrayMailchimp, ...contactsToAdd];
+    newArrayMailchimp = [...newArrayMailchimp, ...addMailChimp];
+    newArrayMailchimp.forEach((contact) => {
+      contact.checked = false;
+    });
     setArrayMailchimp(newArrayMailchimp);
   };
 
