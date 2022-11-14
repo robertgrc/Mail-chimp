@@ -1,4 +1,3 @@
-import { CloudQueue } from "@mui/icons-material";
 import { Box } from "@mui/material";
 import { useState } from "react";
 import Blob from "../components/Blob/Blob";
