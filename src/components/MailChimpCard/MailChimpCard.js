@@ -12,7 +12,7 @@ const MailChimpCard = ({ dropdowndata, handleContactSelection }) => {
       alt="Iconchimp"
       dropdowndata={dropdowndata}
       handleContactSelection={handleContactSelection}
-      appName="Mailchim"
+      appName="Mailchimp"
     />
   );
 };

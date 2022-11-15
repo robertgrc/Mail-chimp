@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   Avatar,
   Box,
+  Button,
   Checkbox,
   Collapse,
   FormControl,
@@ -29,6 +30,24 @@ const DropDownPrueba2 = ({
     ...dropdowndata,
   ]);
 
+  const handleClickOpenCollapse = () => {
+    setOpenCollapse(!openCollapse, appName);
+    handleDisplay(openCollapse, appName);
+    //console.log(openCollapse);
+  };
+
+  const [disableCollapse, setDisableCollapse] = useState(false);
+
+  const handleDisplay = (openCollapse, appName) => {
+    //console.log(openCollapse, appName);
+    // appName === "Gmail" && openCollapse
+    //   ? openCollapse && setDisableCollapse(true)
+    //   : openCollapse && setDisableCollapse(false);
+    // appName === "Mailchimp" && openCollapse
+    //   ? openCollapse && setDisableCollapse(true)
+    //   : openCollapse && setDisableCollapse(false);
+  };
+
   const handleOptionChecked = (index) => {
     console.log("handleOptionChecked: ", index);
     const newContact = [...contactOptionChecked];
@@ -39,7 +58,6 @@ const DropDownPrueba2 = ({
 
   //console.log(contactOptionChecked);
 
-  console.log(dropdowndata);
   const dropDownOptionsArray = dropdowndata.map((item) => item.label);
   return (
     <Box
@@ -74,17 +92,24 @@ const DropDownPrueba2 = ({
           }}
           primary={"All contacts"}
         />
-        <Avatar
-          sx={{
-            width: "15px",
-            height: "10.24px",
-            borderRadius: "1px",
-            marginLeft: "40.11px",
-            transform: openCollapse && "rotate(180deg)",
-          }}
-          onClick={() => setOpenCollapse(!openCollapse)}
-          src={Polygon2}
-        />
+        <Button
+          onClick={handleClickOpenCollapse}
+          size="medium"
+          sx={{}}
+          disabled={disableCollapse}
+          //displayed={true}
+        >
+          <Avatar
+            sx={{
+              width: "15px",
+              height: "10.24px",
+              borderRadius: "1px",
+              marginLeft: "40.11px",
+              transform: openCollapse && "rotate(180deg)",
+            }}
+            src={Polygon2}
+          />
+        </Button>
       </MenuItem>
       <Collapse in={openCollapse}>
         <List
