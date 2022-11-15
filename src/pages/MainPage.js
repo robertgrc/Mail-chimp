@@ -60,6 +60,16 @@ const MainPage = () => {
     //console.log(openCollapse, appName);
   };
 
+  const handleClickOpenCollapseGmail = () => {
+    setOpenCollapse(!openCollapse);
+    handleDisplay(openCollapse);
+  };
+
+  const handleClickOpenCollapseChimp = () => {
+    setOpenCollapseChimp(!openCollapseChimp);
+    handleDisplay(openCollapseChimp);
+  };
+
   return (
     <Box
       sx={{
@@ -76,6 +86,7 @@ const MainPage = () => {
           handleDisplay={handleDisplay}
           openCollapse={openCollapse}
           setOpenCollapse={setOpenCollapse}
+          handleClickOpenCollapseGmail={handleClickOpenCollapseGmail}
         />
       </Box>
 
@@ -97,6 +108,7 @@ const MainPage = () => {
           handleDisplay={handleDisplay}
           openCollapse={openCollapseChimp}
           setOpenCollapse={setOpenCollapseChimp}
+          handleClickOpenCollapseChimp={handleClickOpenCollapseChimp}
         />
       </Box>
       <Box sx={{ zIndex: "1" }}>

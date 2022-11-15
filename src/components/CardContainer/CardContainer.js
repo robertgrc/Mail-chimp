@@ -14,10 +14,10 @@ const CardContainer = ({
   openCollapse,
   setOpenCollapse,
   handleOpenCollapseChimp,
+  handleClickOpenCollapseGmail,
+  handleClickOpenCollapseChimp,
 }) => {
   //const [openCollapse, setOpenCollapse] = useState(false);
-
-  //console.log(dropdowndata);
 
   return (
     <Box
@@ -52,6 +52,8 @@ const CardContainer = ({
           appName={appName}
           handleDisplay={handleDisplay}
           handleOpenCollapseChimp={handleOpenCollapseChimp}
+          handleClickOpenCollapseGmail={handleClickOpenCollapseGmail}
+          handleClickOpenCollapseChimp={handleClickOpenCollapseChimp}
         />
       </Box>
     </Box>

@@ -26,15 +26,12 @@ const DropDownPrueba2 = ({
   dropdowndata,
   appName,
   handleDisplay,
+  handleClickOpenCollapseGmail,
+  handleClickOpenCollapseChimp,
 }) => {
   const [contactOptionChecked, setContactOptionChecked] = useState([
     ...dropdowndata,
   ]);
-
-  const handleClickOpenCollapse = () => {
-    setOpenCollapse(!openCollapse, appName);
-    handleDisplay(openCollapse, appName);
-  };
 
   const handleOptionChecked = (index) => {
     //console.log("handleOptionChecked: ", index);
@@ -79,7 +76,7 @@ const DropDownPrueba2 = ({
           primary={"All contacts"}
         />
         <Button
-          onClick={handleClickOpenCollapse}
+          onClick={handleClickOpenCollapseGmail || handleClickOpenCollapseChimp}
           size="medium"
           sx={{}}
           //disabled={disableCollapse}
