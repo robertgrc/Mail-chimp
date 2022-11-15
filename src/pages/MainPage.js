@@ -14,6 +14,8 @@ const MainPage = () => {
     Mailchimp: mailChimpDropdownData,
   });
 
+  const [openCollapse, setOpenCollapse] = useState(false);
+
   const [contactsToAdd, setContactsToAdd] = useState([]);
 
   const [arrayGmail, setArrayGmail] = useState([...gmailDropdownData]);
@@ -70,6 +72,8 @@ const MainPage = () => {
           dropdowndata={arrayGmail}
           handleContactSelection={handleContactSelection}
           handleDisplay={handleDisplay}
+          openCollapse={openCollapse}
+          setOpenCollapse={setOpenCollapse}
         />
       </Box>
 
@@ -89,6 +93,8 @@ const MainPage = () => {
           dropdowndata={arrayMailchimp}
           handleContactSelection={handleContactSelection}
           handleDisplay={handleDisplay}
+          openCollapse={openCollapse}
+          setOpenCollapse={setOpenCollapse}
         />
       </Box>
       <Box sx={{ zIndex: "1" }}>

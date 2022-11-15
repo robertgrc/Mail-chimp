@@ -6,6 +6,8 @@ const MailChimpCard = ({
   dropdowndata,
   handleContactSelection,
   handleDisplay,
+  openCollapse,
+  setOpenCollapse,
 }) => {
   return (
     <CardContainer
@@ -18,6 +20,8 @@ const MailChimpCard = ({
       handleContactSelection={handleContactSelection}
       appName="Mailchimp"
       handleDisplay={handleDisplay}
+      openCollapse={openCollapse}
+      setOpenCollapse={setOpenCollapse}
     />
   );
 };

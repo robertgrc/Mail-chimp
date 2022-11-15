@@ -15,8 +15,10 @@ const CardContainer = ({
   dropdowndata,
   appName,
   handleDisplay,
+  openCollapse,
+  setOpenCollapse,
 }) => {
-  const [openCollapse, setOpenCollapse] = useState(false);
+  //const [openCollapse, setOpenCollapse] = useState(false);
 
   //console.log(dropdowndata);
 
