@@ -25,6 +25,7 @@ const DropDownPrueba2 = ({
   openCollapse,
   dropdowndata,
   appName,
+  handleDisplay,
 }) => {
   const [contactOptionChecked, setContactOptionChecked] = useState([
     ...dropdowndata,
@@ -33,19 +34,6 @@ const DropDownPrueba2 = ({
   const handleClickOpenCollapse = () => {
     setOpenCollapse(!openCollapse, appName);
     handleDisplay(openCollapse, appName);
-    //console.log(openCollapse);
-  };
-
-  const [disableCollapse, setDisableCollapse] = useState(false);
-
-  const handleDisplay = (openCollapse, appName) => {
-    //console.log(openCollapse, appName);
-    // appName === "Gmail" && openCollapse
-    //   ? openCollapse && setDisableCollapse(true)
-    //   : openCollapse && setDisableCollapse(false);
-    // appName === "Mailchimp" && openCollapse
-    //   ? openCollapse && setDisableCollapse(true)
-    //   : openCollapse && setDisableCollapse(false);
   };
 
   const handleOptionChecked = (index) => {
@@ -55,8 +43,6 @@ const DropDownPrueba2 = ({
     setContactOptionChecked(newContact);
     handleContactSelection(newContact, appName);
   };
-
-  //console.log(contactOptionChecked);
 
   const dropDownOptionsArray = dropdowndata.map((item) => item.label);
   return (
@@ -96,8 +82,7 @@ const DropDownPrueba2 = ({
           onClick={handleClickOpenCollapse}
           size="medium"
           sx={{}}
-          disabled={disableCollapse}
-          //displayed={true}
+          //disabled={disableCollapse}
         >
           <Avatar
             sx={{

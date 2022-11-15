@@ -7,6 +7,7 @@ const GmailCard = ({
   dropDownOptions,
   dropdowndata,
   selectContacts,
+  handleDisplay,
 }) => {
   //console.log(gmailDropdownData);
 
@@ -22,6 +23,7 @@ const GmailCard = ({
       dropdowndata={dropdowndata}
       selectContacts={selectContacts}
       appName="Gmail"
+      handleDisplay={handleDisplay}
     />
   );
 };

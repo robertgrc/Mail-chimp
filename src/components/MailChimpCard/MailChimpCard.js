@@ -2,7 +2,11 @@ import React from "react";
 import CardContainer from "../CardContainer/CardContainer";
 import Iconchimp from "../../assets/gmail/Iconchimp.jpg";
 
-const MailChimpCard = ({ dropdowndata, handleContactSelection }) => {
+const MailChimpCard = ({
+  dropdowndata,
+  handleContactSelection,
+  handleDisplay,
+}) => {
   return (
     <CardContainer
       title="Mailchimp"
@@ -13,6 +17,7 @@ const MailChimpCard = ({ dropdowndata, handleContactSelection }) => {
       dropdowndata={dropdowndata}
       handleContactSelection={handleContactSelection}
       appName="Mailchimp"
+      handleDisplay={handleDisplay}
     />
   );
 };

@@ -21,6 +21,7 @@ const MainPage = () => {
   const [arrayMailchimp, setArrayMailchimp] = useState([
     ...mailChimpDropdownData,
   ]);
+  const [disableCollapse, setDisableCollapse] = useState(false);
 
   const handleContactSelection = (newContact, appName) => {
     let contactsToAdd = newContact.filter(
@@ -51,6 +52,16 @@ const MainPage = () => {
     setArrayMailchimp(newArrayMailchimp);
   };
 
+  const handleDisplay = (openCollapse, appName) => {
+    console.log(openCollapse, appName);
+    // appName === "Gmail" && openCollapse
+    //   ? openCollapse && setDisableCollapse(true)
+    //   : openCollapse && setDisableCollapse(false);
+    // appName === "Mailchimp" && openCollapse
+    //   ? openCollapse && setDisableCollapse(true)
+    //   : openCollapse && setDisableCollapse(false);
+  };
+
   return (
     <Box
       sx={{
@@ -64,6 +75,7 @@ const MainPage = () => {
         <GmailCard
           dropdowndata={arrayGmail}
           handleContactSelection={handleContactSelection}
+          handleDisplay={handleDisplay}
         />
       </Box>
 
@@ -82,6 +94,7 @@ const MainPage = () => {
         <MailChimpCard
           dropdowndata={arrayMailchimp}
           handleContactSelection={handleContactSelection}
+          handleDisplay={handleDisplay}
         />
       </Box>
       <Box sx={{ zIndex: "1" }}>
