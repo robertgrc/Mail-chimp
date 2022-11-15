@@ -1,9 +1,5 @@
 import Box from "@mui/material/Box";
-import { useState } from "react";
 import CardInformation from "../CardInformation/CardInformation";
-//import NewDropDown from "../NewDropDown/NewDropDown";
-//import SelectDropdown from "../SelectDropdown/SelectDropdown";
-//import DropDownPrueba from "../DropDownPrueba/DropDownPrueba";
 import DropDownPrueba2 from "../DropDownPrueba2/DropDownPrueba2";
 
 const CardContainer = ({
@@ -17,6 +13,7 @@ const CardContainer = ({
   handleDisplay,
   openCollapse,
   setOpenCollapse,
+  handleOpenCollapseChimp,
 }) => {
   //const [openCollapse, setOpenCollapse] = useState(false);
 
@@ -54,6 +51,7 @@ const CardContainer = ({
           dropdowndata={dropdowndata}
           appName={appName}
           handleDisplay={handleDisplay}
+          handleOpenCollapseChimp={handleOpenCollapseChimp}
         />
       </Box>
     </Box>
