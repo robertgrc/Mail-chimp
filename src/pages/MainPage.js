@@ -54,12 +54,6 @@ const MainPage = () => {
 
   const handleDisplay = (openCollapse, appName) => {
     console.log(openCollapse, appName);
-    // appName === "Gmail" && openCollapse
-    //   ? openCollapse && setDisableCollapse(true)
-    //   : openCollapse && setDisableCollapse(false);
-    // appName === "Mailchimp" && openCollapse
-    //   ? openCollapse && setDisableCollapse(true)
-    //   : openCollapse && setDisableCollapse(false);
   };
 
   return (
