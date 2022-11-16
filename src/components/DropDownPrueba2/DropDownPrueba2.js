@@ -79,7 +79,7 @@ const DropDownPrueba2 = ({
           onClick={handleClickOpenCollapseGmail || handleClickOpenCollapseChimp}
           size="medium"
           sx={{}}
-          //disabled={disableCollapse}
+          //disabled={handleDisplay}
         >
           <Avatar
             sx={{

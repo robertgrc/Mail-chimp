@@ -1,10 +1,8 @@
 import { Box } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Blob from "../components/Blob/Blob";
-//import Blob from "../assets/Blob.jpg";
 import GmailCard from "../components/GmailCard/GmailCard";
 import MailChimpCard from "../components/MailChimpCard/MailChimpCard";
-//import Practica from "../components/Practice/Practica";
 import SyncContacts from "../components/SyncContacts/SyncContacts";
 import { gmailDropdownData, mailChimpDropdownData } from "./data";
 
@@ -57,11 +55,12 @@ const MainPage = () => {
   };
 
   const handleDisplay = (openCollapse, appName) => {
-    //console.log(openCollapse, appName);
+    //console.log(openCollapse);
   };
 
   const handleClickOpenCollapseGmail = () => {
     setOpenCollapse(!openCollapse);
+    console.log(openCollapse);
     handleDisplay(openCollapse);
   };
 
@@ -69,6 +68,11 @@ const MainPage = () => {
     setOpenCollapseChimp(!openCollapseChimp);
     handleDisplay(openCollapseChimp);
   };
+
+  useEffect(() => {
+    console.log("openCollapseGmail", openCollapse);
+    console.log("openCollapseChimp", openCollapseChimp);
+  }, [openCollapseChimp, openCollapse]);
 
   return (
     <Box
@@ -109,6 +113,7 @@ const MainPage = () => {
           openCollapse={openCollapseChimp}
           setOpenCollapse={setOpenCollapseChimp}
           handleClickOpenCollapseChimp={handleClickOpenCollapseChimp}
+          //handleClickOpenCollapse={handleClickOpenCollapse}
         />
       </Box>
       <Box sx={{ zIndex: "1" }}>
