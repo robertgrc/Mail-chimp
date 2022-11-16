@@ -11,6 +11,7 @@ const GmailCard = ({
   openCollapse,
   setOpenCollapse,
   handleClickOpenCollapseGmail,
+  disableButtonCollapse,
 }) => {
   //console.log(gmailDropdownData);
 
@@ -30,6 +31,7 @@ const GmailCard = ({
       openCollapse={openCollapse}
       setOpenCollapse={setOpenCollapse}
       handleClickOpenCollapseGmail={handleClickOpenCollapseGmail}
+      disableButtonCollapse={disableButtonCollapse}
     />
   );
 };

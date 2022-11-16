@@ -9,6 +9,7 @@ const MailChimpCard = ({
   openCollapse,
   setOpenCollapse,
   handleClickOpenCollapseChimp,
+  disableButtonCollapse,
 }) => {
   return (
     <CardContainer
@@ -24,6 +25,7 @@ const MailChimpCard = ({
       openCollapse={openCollapse}
       setOpenCollapse={setOpenCollapse}
       handleClickOpenCollapseChimp={handleClickOpenCollapseChimp}
+      disableButtonCollapse={disableButtonCollapse}
     />
   );
 };

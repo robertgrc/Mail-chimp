@@ -16,6 +16,7 @@ const CardContainer = ({
   handleOpenCollapseChimp,
   handleClickOpenCollapseGmail,
   handleClickOpenCollapseChimp,
+  disableButtonCollapse,
 }) => {
   //const [openCollapse, setOpenCollapse] = useState(false);
 
@@ -54,6 +55,7 @@ const CardContainer = ({
           handleOpenCollapseChimp={handleOpenCollapseChimp}
           handleClickOpenCollapseGmail={handleClickOpenCollapseGmail}
           handleClickOpenCollapseChimp={handleClickOpenCollapseChimp}
+          disableButtonCollapse={disableButtonCollapse}
         />
       </Box>
     </Box>

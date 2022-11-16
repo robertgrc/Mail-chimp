@@ -28,6 +28,7 @@ const DropDownPrueba2 = ({
   handleDisplay,
   handleClickOpenCollapseGmail,
   handleClickOpenCollapseChimp,
+  disableButtonCollapse,
 }) => {
   const [contactOptionChecked, setContactOptionChecked] = useState([
     ...dropdowndata,
@@ -79,7 +80,7 @@ const DropDownPrueba2 = ({
           onClick={handleClickOpenCollapseGmail || handleClickOpenCollapseChimp}
           size="medium"
           sx={{}}
-          //disabled={handleDisplay}
+          disabled={disableButtonCollapse}
         >
           <Avatar
             sx={{
